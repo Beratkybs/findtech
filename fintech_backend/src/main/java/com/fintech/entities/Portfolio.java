@@ -1,5 +1,6 @@
 package com.fintech.entities;
 
+import com.fintech.entities.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,8 +21,8 @@ public class Portfolio {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(name = "asset_symbol")
     private String assetSymbol;      // GA, USD, EUR, BTC...
